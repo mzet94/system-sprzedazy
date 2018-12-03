@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.director.delete'|trans }}
+{% endblock %}
+
+{% block content %}
+	<div class="container w-75 p-3"><br/>
+	{% if is_granted('ROLE_ADMIN') %}
+		<div class="alert alert-danger" role="alert">
+			  {{'question.confirmation.director'|trans}}
+		</div>
+			<div class="card">
+			{% if director is defined and director|length %}
+				<div class="card-body">
+					<h5 class="card-title">{{ director.firstName }}</h5>
+					<h6 class="card-subtitle mb-2 text-muted">{{ director.surname }}</h6>
+						{% include 'default/_form.html.twig' with {
+						page_title: '',
+						attr: {
+						method: 'post',
+						action: url('director_delete', {'id': director.id})
+						},
+						submit_label: 'Usuń',
+						back_to_list_path: 'director_index',
+						} %}
+				</div>
+			{% else %}
+				<p>
+					{{ 'message.empty_list'|trans }}
+				</p>
+			{% endif %}
+			</div>
+	{% else %}
+		<div class="alert alert-danger" role="alert">
+			{{'message.error.not.allow'|trans}}
+		</div>
+	{% endif %}
+	</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.plays'|trans }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container w-75 p-3"><br/>
+        <div>
+            {% include 'default/_flash_messages.html.twig' %}
+        </div>
+        <h1>{{ 'title.plays'|trans }}
+            {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('play_add') }}" class="btn btn-primary" title="{{ 'action.add'|trans }}">
+            {{ 'action.add'|trans }}</a>
+            {% endif %}
+        </h1>
+        {% if plays is defined and plays|length %}
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>{{ 'label.title'|trans }}</th>
+                        <th>{{ 'label.director'|trans }}</th>
+                        <th scope="col">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>{{ 'label.actions'|trans }}
+                        </th>
+                        {% if is_granted('ROLE_ADMIN') %}
+                             <th scope="col">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>{{ 'label.actions'|trans }}
+                            </th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in plays %}
+                    <tr>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.director.firstName }} {{ item.director.surname }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="{{ path('spectacle_index_play', {'play': item.id}) }}" class="btn btn-info" title="{{ 'action.view'|trans }}">
+                                    {{ 'action.view'|trans }}
+                                </a>
+                            </div>
+                        </td>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ path('play_delete', {'id': item.id}) }}" class="btn btn-danger" title="{{ 'action.delete'|trans }}">
+                                        {{ 'action.delete'|trans }}
+                                    </a>
+                                </div>
+                            </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="alert alert-warning" role="alert">
+                {{ 'message.empty_list'|trans }}
+            </div>
+        {% endif %}
+        <div class="navigation text-center">
+            {{ pagerfanta(plays, 'twitter_bootstrap3_translated', { routeName: ('play_index_paginated') }) }}
+        </div>
+    </div>
+{% endblock %}

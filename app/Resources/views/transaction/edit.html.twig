@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.status.edit'|trans }}
+{% endblock %}
+
+{% block content %}
+<div class="container w-75 p-3"><br/>
+	{% if is_granted('ROLE_ADMIN') %}
+		<div class="card">
+			<div class="card-header">
+				<h2>
+				{{ 'title.status.edit'|trans }}
+				</h2>
+			</div>
+			<div class="card-body">
+				<h5 class="card-title"></h5>
+				<h6 class="card-subtitle mb-2 text-muted">Login klienta: {{ transaction.user.username }}</h6>
+				<p class="card-text"> Data: {{ transaction.date|date('Y-m-d') }}</p>
+				<p class="card-text">Obecny status: {{ transaction.status.name }}</p>
+				{% include 'default/_form.html.twig' with {
+				page_title: '',
+				attr: {
+				method: 'post',
+				action: url('status_edit', {'id': transaction.id})
+				},
+				back_to_list_path: 'transaction_index',
+				submit_label: 'Edytuj'
+				} %}
+			</div>
+		</div>
+	{% else %}
+		<div class="alert alert-danger" role="alert">
+			{{ 'message.error.not.allow'|trans }}
+		</div>
+	{% endif %}
+</div>
+{% endblock %}

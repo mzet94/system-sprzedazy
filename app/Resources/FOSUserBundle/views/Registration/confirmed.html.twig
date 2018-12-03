@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<div class="container"><br/>
+    {% if targetUrl %}
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+	{% include 'default/_single_flash_message.html.twig' with {
+			type: 'success',
+			message:  'registration.confirmed'|trans
+	}%}
+	{% include 'default/_single_flash_message.html.twig' with {
+			type: 'warning',
+			message:  'Uzupełnij swoje dane kontaktowe, aby móc kupować bilety!'
+	}%}
+	
+</div>
+	
+{% endblock %}

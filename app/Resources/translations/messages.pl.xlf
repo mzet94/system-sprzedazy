@@ -1,0 +1,603 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="file.ext">
+		<body>
+			<trans-unit id="name.spectacles">
+				<source>name.spectacles</source>
+				<target>Spektakle</target>
+			</trans-unit>
+			<trans-unit id="message.empty_list">
+				<source>message.empty_list</source>
+				<target>Lista jest pusta!</target>
+			</trans-unit>
+			<trans-unit id="message.form_error">
+				<source>message.form_error</source>
+				<target>Formularz jest błędnie wypełniony!</target>
+			</trans-unit>
+			<trans-unit id="message.created_successfully">
+				<source>message.created_successfully</source>
+				<target>Udało się poprawnie dodać dane!</target>
+			</trans-unit>
+			<trans-unit id="change.password.submit">
+				<source>change.password.submit</source>
+				<target>Zmień hasło</target>
+			</trans-unit>
+			<trans-unit id="title.transaction.view">
+				<source>title.transaction.view</source>
+				<target>Szczegóły transakcji</target>
+			</trans-unit>
+			<trans-unit id="action.index.transaction">
+				<source>action.index.transaction</source>
+				<target>Powrót do listy</target>
+			</trans-unit>
+			<trans-unit id="transaction.view">
+				<source>transaction.view</source>
+				<target>Szczegóły transakcji</target>
+			</trans-unit>
+			<trans-unit id="label.date.spectacle">
+				<source>label.date.spectacle</source>
+				<target>Data spektaklu</target>
+			</trans-unit>
+			<trans-unit id="message.order_created_successfully">
+				<source>message.order_created_successfully</source>
+				<target>GRATULACJE! Przyjeliśmy Twoje zamówienie!</target>
+			</trans-unit>
+			<trans-unit id="message.order_error">
+				<source>message.order_error</source>
+				<target>Wpisana liczba przekracza dostępną ilość biletów. Spróbuj jeszcze raz!</target>
+			</trans-unit>
+			<trans-unit id="message.error_view">
+				<source>message.error_view</source>
+				<target>Błąd wyświetlania!</target>
+			</trans-unit>
+			<trans-unit id="question.confirmation.spectacle">
+				<source>question.confirmation.spectacle</source>
+				<target>Czy na pewno chcesz usunąć ten spektakl?</target>
+			</trans-unit>
+			<trans-unit id="message.created_successfully_change">
+				<source>message.created_successfully_change</source>
+				<target>Status został zmieniony.</target>
+			</trans-unit>
+			<trans-unit id="action.buy.zero">
+				<source>action.buy.zero</source>
+				<target>Wyprzedane</target>
+			</trans-unit>
+			<trans-unit id="label.status.change">
+				<source>label.status.change</source>
+				<target>Wybierz status</target>
+			</trans-unit>
+			<trans-unit id="label.user">
+				<source>label.user</source>
+				<target>Nazwa użytkownika</target>
+			</trans-unit>
+			<trans-unit id="action.edit.status">
+				<source>action.edit.status</source>
+				<target>Zmień status</target>
+			</trans-unit>
+			<trans-unit id="title.status.edit">
+				<source>title.status.edit</source>
+				<target>Zmiana statusu zamówienia</target>
+			</trans-unit>
+			<trans-unit id="label.money">
+				<source>label.money</source>
+				<target>DO ZAPŁATY</target>
+			</trans-unit>
+			<trans-unit id="title.location.delete">
+				<source>title.location.delete</source>
+				<target>Usuwanie lokalizacji</target>
+			</trans-unit>
+			<trans-unit id="title.spectacle.delete">
+				<source>title.spectacle.delete</source>
+				<target>Usuwanie spektaklu</target>
+			</trans-unit>
+			<trans-unit id="title.spectacle.edit">
+				<source>title.spectacle.edit</source>
+				<target>Edycja spektaklu</target>
+			</trans-unit>
+			<trans-unit id="title.director.delete">
+				<source>title.director.delete</source>
+				<target>Usuwanie reżysera</target>
+			</trans-unit>
+			<trans-unit id="Year">
+				<source>Year</source>
+				<target>Rok</target>
+			</trans-unit>
+			<trans-unit id="title.transaction">
+				<source>title.transaction</source>
+				<target>Potwierdzenie transakcji</target>
+			</trans-unit>
+			<trans-unit id="item.date.add">
+				<source>label.date.add</source>
+				<target>Data złożenia zamówienia</target>
+			</trans-unit>
+			<trans-unit id="form.email">
+				<source>form.email</source>
+				<target>Email</target>
+			</trans-unit>
+			<trans-unit id="play.delete">
+				<source>play.delete</source>
+				<target>Usuwanie sztuki</target>
+			</trans-unit>
+			<trans-unit id="label.spectacle">
+				<source>label.spectacle</source>
+				<target>Wyświetl wszystkie dostępne</target>
+			</trans-unit>
+			<trans-unit id="transaction.accept">
+				<source>transaction.accept</source>
+				<target>Potwierdzenie zamówienia</target>
+			</trans-unit>
+			<trans-unit id="add.address">
+				<source>add.address</source>
+				<target>Dodaj adres</target>
+			</trans-unit>
+			<trans-unit id="message.empty_list_spectacle">
+				<source>message.empty_list_spectacle</source>
+				<target>Aktualnie brak spektakli</target>
+			</trans-unit>
+			<trans-unit id="form.password">
+				<source>form.password</source>
+				<target>Hasło</target>
+			</trans-unit>
+			<trans-unit id=" ">
+				<source> </source>
+				<target> </target>
+			</trans-unit>
+			<trans-unit id="form.form.username">
+				<source>form.form.username</source>
+				<target>Nazwa użytkownika</target>
+			</trans-unit>
+			<trans-unit id="form.password_confirmation">
+				<source>form.password_confirmation</source>
+				<target>Powtórz hasło</target>
+			</trans-unit>
+			<trans-unit id="previous">
+				<source>previous</source>
+				<target>wstecz</target>
+			</trans-unit>
+			<trans-unit id="title.transaction.delete">
+				<source>title.transaction.delete</source>
+				<target>Usuwanie zamówienia</target>
+			</trans-unit>
+			<trans-unit id="question.confirmation.transaction">
+				<source>question.confirmation.transaction</source>
+				<target>Czy na pewno chcesz usunąć to zamówienie?</target>
+			</trans-unit>
+			<trans-unit id="title.transaction_detail_add">
+				<source>title.transaction_detail_add</source>
+				<target>Podaj ilość biletów</target>
+			</trans-unit>
+			<trans-unit id="The user has been created successfully.">
+				<source>The user has been created successfully.</source>
+				<target>Rejestracja przebiegła pomyślnie!</target>
+			</trans-unit>
+			<trans-unit id="hello.action">
+				<source>hello.action</source>
+				<target>Witaj</target>
+			</trans-unit>
+			<trans-unit id="hello.action.user1">
+				<source>hello.action.user1</source>
+				<target>Aby kupić bilet przejdź do zakładki</target>
+			</trans-unit>
+			<trans-unit id="hello.action.user2">
+				<source>hello.action.user2</source>
+				<target>Twoje zamówienia znajdują się w zakładce</target>
+			</trans-unit>
+			<trans-unit id="hello.action.user3">
+				<source>hello.action.user3</source>
+				<target>Miłego korzystania z serwisu!</target>
+			</trans-unit>
+			<trans-unit id="spectacle.spectacle">
+				<source>spectacle.spectacle</source>
+				<target>Spektakle</target>
+			</trans-unit>
+			<trans-unit id="tickets.tickets">
+				<source>tickets.tickets</source>
+				<target>Moje bilety</target>
+			</trans-unit>
+			<trans-unit id="hello.admin">
+				<source>hello.admin</source>
+				<target>Administracja</target>
+			</trans-unit>
+			<trans-unit id="The profile has been updated.">
+				<source>The profile has been updated.</source>
+				<target>Dane zostały poprawnie zmienione.</target>
+			</trans-unit>
+			<trans-unit id="Month">
+				<source>Month</source>
+				<target>Miesiąc</target>
+			</trans-unit>
+			<trans-unit id="Day">
+				<source>Day</source>
+				<target>Dzień</target>
+			</trans-unit>
+			<trans-unit id="Address">
+				<source>Address</source>
+				<target>Adres</target>
+			</trans-unit>
+			<trans-unit id="City">
+				<source>City</source>
+				<target>Miasto</target>
+			</trans-unit>
+			<trans-unit id="Street">
+				<source>Street</source>
+				<target>Ulica</target>
+			</trans-unit>
+			<trans-unit id="Number">
+				<source>Number</source>
+				<target>Numer</target>
+			</trans-unit>
+			<trans-unit id="log_error">
+				<source>log_error</source>
+				<target>Aby kupić bilet musisz się zalogować!</target>
+			</trans-unit>
+			<trans-unit id="title.location.edit">
+				<source>title.location.edit</source>
+				<target>Edycja lokalizacji</target>
+			</trans-unit>
+			<trans-unit id="title.director.edit">
+				<source>title.director.edit</source>
+				<target>Edycja reżysera</target>
+			</trans-unit>
+			<trans-unit id="action.buy.login">
+				<source>action.buy.login</source>
+				<target>Tylko dla zalogowanych</target>
+			</trans-unit>
+			<trans-unit id="title.play.edit">
+				<source>title.play.edit</source>
+				<target>Edycja sztuki</target>
+			</trans-unit>
+			<trans-unit id="Post">
+				<source>Post</source>
+				<target>Kod pocztowy</target>
+			</trans-unit>
+			<trans-unit id="message.error.not.allow">
+				<source>message.error.not.allow</source>
+				<target>Brak dostępu!</target>
+			</trans-unit>
+			<trans-unit id="">
+				<source></source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="__name__label__">
+				<source>__name__label__</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="Transaction details">
+				<source>Transaction details</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="label.numberOfTickets">
+				<source>label.numberOfTickets</source>
+				<target>Liczba biletów</target>
+			</trans-unit>
+			<trans-unit id="Hour">
+				<source>Hour</source>
+				<target>Godzina</target>
+			</trans-unit>
+			<trans-unit id="Minute">
+				<source>Minute</source>
+				<target>Minuta</target>
+			</trans-unit>
+			<trans-unit id="label.phone">
+				<source>label.phone</source>
+				<target>Numer telefonu</target>
+			</trans-unit>
+			<trans-unit id="question.confirmation.play">
+				<source>question.confirmation.play</source>
+				<target>Czy jesteś pewny, że chcesz usunąć tę sztukę?</target>
+			</trans-unit>
+			<trans-unit id="title.directors">
+				<source>title.directors</source>
+				<target>Reżyserzy</target>
+			</trans-unit>
+			<trans-unit id="label.status">
+				<source>label.status</source>
+				<target>Status zamówienia</target>
+			</trans-unit>
+			<trans-unit id="action.view.transaction">
+				<source>action.view.transaction</source>
+				<target>Szczegóły</target>
+			</trans-unit>
+			<trans-unit id="action.edit.spectacle">
+				<source>action.edit.spectacle</source>
+				<target>Wprowadź zmiany</target>
+			</trans-unit>
+			<trans-unit id="message.user_is_user">
+				<source>message.user_is_user</source>
+				<target>Też użytkownik ma już przypisaną role zwykłego użytkownika.</target>
+			</trans-unit>
+			<trans-unit id="message.user_is_admin">
+				<source>message.user_is_admin</source>
+				<target>Też użytkownik ma już przypisną role administratora.</target>
+			</trans-unit>
+			<trans-unit id="action.change">
+				<source>action.change</source>
+				<target>Nadaj uprawnienia -> zwykły użytkownik</target>
+			</trans-unit>
+			<trans-unit id="message.cant_remove_role">
+				<source>message.cant_remove_role</source>
+				<target>Nie możesz zmienić swoich uprawnień!</target>
+			</trans-unit>
+			<trans-unit id="action.change.admin">
+				<source>action.change.admin</source>
+				<target>Nadaj uprawnienia -> administrator</target>
+			</trans-unit>
+			<trans-unit id="message.update_admin_user">
+				<source>message.update_admin_user</source>
+				<target>Dokonano zmian. Użytkownik jest teraz administratorem.</target>
+			</trans-unit>
+			<trans-unit id="message.update_normal_user">
+				<source>message.update_normal_user</source>
+				<target>Dokonano zmian. Użytkownik jest teraz zwykłym użytkownikiem systemu.</target>
+			</trans-unit>
+			<trans-unit id="label.id">
+				<source>label.id</source>
+				<target>Id</target>
+			</trans-unit>
+			<trans-unit id="action.view.spectacle">
+				<source>action.view.spectacle</source>
+				<target>Szczegóły</target>
+			</trans-unit>
+			<trans-unit id="action.edit.permission">
+				<source>action.edit.permission</source>
+				<target>Zmień uprawnienia</target>
+			</trans-unit>
+			<trans-unit id="action.buy">
+				<source>action.buy</source>
+				<target>Kup bilet</target>
+			</trans-unit>
+			<trans-unit id="label.firstName">
+				<source>label.firstName</source>
+				<target>Imię</target>
+			</trans-unit>
+			<trans-unit id="label.surname">
+				<source>label.surname</source>
+				<target>Nazwisko</target>
+			</trans-unit>
+			<trans-unit id="label.actions">
+				<source>label.actions</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="title.director.add">
+				<source>title.director.add</source>
+				<target>Dodawanie reżyserów</target>
+			</trans-unit>
+			<trans-unit id="title.director_add">
+				<source>title.director_add</source>
+				<target>Dodawanie reżyserów</target>
+			</trans-unit>
+			<trans-unit id="action.save">
+				<source>action.save</source>
+				<target>Zapisz</target>
+			</trans-unit>
+			<trans-unit id="label.homepage">
+				<source>label.homepage</source>
+				<target>Strona główna</target>
+			</trans-unit>
+			<trans-unit id="action.back_to_list">
+				<source>action.back_to_list</source>
+				<target>Wróć do listy</target>
+			</trans-unit>
+			<trans-unit id="action.add">
+				<source>action.add</source>
+				<target>Dodaj</target>
+			</trans-unit>
+			<trans-unit id="title.director_delete">
+				<source>title.director_delete</source>
+				<target>Usuwanie reżysera z listy</target>
+			</trans-unit>
+			<trans-unit id="question.confirmation">
+				<source>question.confirmation</source>
+				<target>Czy na pewno chcesz usunąć tego reżysera?</target>
+			</trans-unit>
+			<trans-unit id="question.confirmation.user">
+				<source>question.confirmation.user</source>
+				<target>Czy jesteś pewnien, że chcesz usunąć tego użytkownika?</target>
+			</trans-unit>
+			<trans-unit id="question.confirmation.location">
+				<source>question.confirmation.location</source>
+				<target>Czy jesteś pewnien, że chcesz usunąć ten teatr?</target>
+			</trans-unit>
+			<trans-unit id="question.confirmation.director">
+				<source>question.confirmation.director</source>
+				<target>Czy jesteś pewnien, że chcesz tego reżysera?</target>
+			</trans-unit>
+			<trans-unit id="action.index">
+				<source>action.index</source>
+				<target>Wróc do listy</target>
+			</trans-unit>
+			<trans-unit id="action.delete">
+				<source>action.delete</source>
+				<target>Usuń</target>
+			</trans-unit>
+			<trans-unit id="action.view">
+				<source>action.view</source>
+				<target>Sprawdź dostępne spektakle</target>
+			</trans-unit>
+			<trans-unit id="name.locations">
+				<source>name.locations</source>
+				<target>Lista teatrów</target>
+			</trans-unit>
+			<trans-unit id="label.name">
+				<source>label.name</source>
+				<target>Nazwa</target>
+			</trans-unit>
+			<trans-unit id="label.city">
+				<source>label.city</source>
+				<target>Miasto</target>
+			</trans-unit>
+			<trans-unit id="label.street">
+				<source>label.street</source>
+				<target>Ulica</target>
+			</trans-unit>
+			<trans-unit id="label.number">
+				<source>label.number</source>
+				<target>Numer</target>
+			</trans-unit>
+			<trans-unit id="title.location_add">
+				<source>title.location_add</source>
+				<target>Dodawanie teatru</target>
+			</trans-unit>
+			<trans-unit id="title.location.add">
+				<source>title.location.add</source>
+				<target>Dodawanie teatru</target>
+			</trans-unit>
+			<trans-unit id="title.plays">
+				<source>title.plays</source>
+				<target>Aktualnie w repertuarze</target>
+			</trans-unit>
+			<trans-unit id="title.play_add">
+				<source>title.play_add</source>
+				<target>Dodawanie sztuki</target>
+			</trans-unit>
+			<trans-unit id="label.title">
+				<source>label.title</source>
+				<target>Tytuł</target>
+			</trans-unit>
+			<trans-unit id="label.director">
+				<source>label.director</source>
+				<target>Reżyser</target>
+			</trans-unit>
+			<trans-unit id="title.play_delete">
+				<source>title.play_delete</source>
+				<target>Usuwanie sztuki</target>
+			</trans-unit>
+			<trans-unit id="name.transactions">
+				<source>name.transactions</source>
+				<target>Lista zamówień</target>
+			</trans-unit>
+			<trans-unit id="title.transaction_add">
+				<source>title.transaction_add</source>
+				<target>Złóż zamówienie</target>
+			</trans-unit>
+			<trans-unit id="label.date">
+				<source>label.date</source>
+				<target>Data</target>
+			</trans-unit>
+			<trans-unit id="action.edit">
+				<source>action.edit</source>
+				<target>Wprowadź zmiany</target>
+			</trans-unit>
+			<trans-unit id="label.tickets">
+				<source>label.tickets</source>
+				<target>Ilość biletów</target>
+			</trans-unit>
+			<trans-unit id="label.paymentmethod">
+				<source>label.paymentmethod</source>
+				<target>Sposób płatności</target>
+			</trans-unit>
+			<trans-unit id="label.collection">
+				<source>label.collection</source>
+				<target>Dostawa</target>
+			</trans-unit>
+			<trans-unit id="title.admins">
+				<source>title.admins</source>
+				<target>Zarejestrowani użytkownicy</target>
+			</trans-unit>
+			<trans-unit id="label.username">
+				<source>label.username</source>
+				<target>Login</target>
+			</trans-unit>
+			<trans-unit id="label.email">
+				<source>label.email</source>
+				<target>E-mail</target>
+			</trans-unit>
+			<trans-unit id="label.last.login">
+				<source>label.last.login</source>
+				<target>Ostatnie logownie</target>
+			</trans-unit>
+			<trans-unit id="title.user.delete">
+				<source>title.user.delete</source>
+				<target>Usuwanie użytkownika</target>
+			</trans-unit>
+			<trans-unit id="message.deleted_successfully">
+				<source>message.deleted_successfully</source>
+				<target>Usuwanie zakończone sukcesem!</target>
+			</trans-unit>
+			<trans-unit id="registration.submit">
+				<source>registration.submit</source>
+				<target>Załóż konto</target>
+			</trans-unit>
+			<trans-unit id="registration.confirmed">
+				<source>registration.confirmed</source>
+				<target>Rejestracja przebiegła pomyślnie!</target>
+			</trans-unit>
+			<trans-unit id="profile.show.username">
+				<source>profile.show.username</source>
+				<target>Nazwa użytkownika</target>
+			</trans-unit>
+			<trans-unit id="profile.show.email">
+				<source>profile.show.email</source>
+				<target>Adres e-mail</target>
+			</trans-unit>
+			<trans-unit id="title.homepage">
+				<source>title.homepage</source>
+				<target>Sztukomat</target>
+			</trans-unit>
+			<trans-unit id="title.spectacle_add">
+				<source>title.spectacle_add</source>
+				<target>Dodaj spektakl</target>
+			</trans-unit>
+			<trans-unit id="add.details">
+				<source>add.details</source>
+				<target>Dodawanie danych kontaktowych</target>
+			</trans-unit>
+			<trans-unit id="label.time">
+				<source>label.time</source>
+				<target>Godzina</target>
+			</trans-unit>
+			<trans-unit id="label.post">
+				<source>label.post</source>
+				<target>Kod pocztowy</target>
+			</trans-unit>
+			<trans-unit id="label.seats">
+				<source>label.seats</source>
+				<target>Ilość miejsc</target>
+			</trans-unit>
+			<trans-unit id="label.price">
+				<source>label.price</source>
+				<target>Cena biletu</target>
+			</trans-unit>
+			<trans-unit id="label.location">
+				<source>label.location</source>
+				<target>Lokalizacja</target>
+			</trans-unit>
+			<trans-unit id="label.play">
+				<source>label.play</source>
+				<target>Tytuł szuki</target>
+			</trans-unit>
+			<trans-unit id="title.users">
+				<source>title.users</source>
+				<target>Użytkownicy</target>
+			</trans-unit>
+			<trans-unit id="security.login.submit">
+				<source>security.login.submit</source>
+				<target>Zaloguj</target>
+			</trans-unit>
+			<trans-unit id="security.login.remember_me">
+				<source>security.login.remember_me</source>
+				<target>Zapamiętaj mnie</target>
+			</trans-unit>
+			<trans-unit id="security.login.password">
+				<source>security.login.password</source>
+				<target>Hasło</target>
+			</trans-unit>
+			<trans-unit id="security.login.username">
+				<source>security.login.username</source>
+				<target>Login</target>
+			</trans-unit>
+			<trans-unit id="error.messageKey">
+				<source>error.messageKey</source>
+				<target>Wprowadziłeś błędne dane!</target>
+			</trans-unit>
+			<trans-unit id="label.hello">
+				<source>label.hello</source>
+				<target>Witaj</target>
+			</trans-unit>
+			<trans-unit id="profile.edit.submit">
+				<source>profile.edit.submit</source>
+				<target>Zapisz zmiany</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

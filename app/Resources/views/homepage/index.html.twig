@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.homepage'|trans }}
+{% endblock %}
+
+{% block content %}
+	<div class="container all w-75 p-3"><br/>
+		<div>
+			{% include 'default/_flash_messages.html.twig' %}
+		</div>
+		<div class="jumbotron jumbotron-fluid px-3">
+			<div class="container">
+				<h1 class="display-5">SZTUKOMAT</h1>
+				<p class="lead">System sprzedaży biletów teatralnych<br/></p>
+				<hr class="my-4">
+				<p>Projekt przygotowany w ramach przemiotu Zaawansowane Techniki Programowania 2 na kierunku Elektroniczne Przetwarzanie Informacji.</p>
+				<p> Autor: Marta Zięba</p>
+				{% if is_granted('IS_AUTHENTICATED_FULLY') == NULL %}
+				<p> Aby w pełni korzystać z możliwości systemu <a class="btn btn-outline-success" href="{{ url('fos_user_security_login') }}" role="button">zaloguj się</a></p>
+					{% endif %}
+		    </div>
+		</div>
+	</div>
+{% endblock %}

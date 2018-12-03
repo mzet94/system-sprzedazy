@@ -1,0 +1,19 @@
+error-greater: Wpisz poprawny numer. Pamiętaj, że liczba musi być większa od 0.
+This value should have exactly {{ limit }} character.|This value should have exactly {{ limit }} characters.: Numer telefonu powinien mieć 9 cyfr.
+fos_user.email.invalid: Nieprawidłowy adres e-mail.
+fos_user.password.short: Hasło jest zbyt krótkie.
+fos_user.email.already_used: Taki e-mail już istnieje w serwisie!
+fos_user.password.blank: Pole z hasłem nie może być puste!
+fos_user.password.mismatch: Hasła nie są takie same!
+fos_user.username.already_used: Ta nazwa jest już zajęta!
+Name of the city must have {{ limit }} letters.: Nazwa miasta nie może mieć mniej niż {{ limit }} litery.
+Name of the street must have {{ limit }} letters.: Nazwa ulicy nie może mieć mniej niż {{ limit }} litery.
+Name of the city must have less than {{ limit }} letters.: Nazwa miasta nie może mieć więcej niż {{ limit }} liter.
+Name of the street must have less than {{ limit }} letters.: Nazwa ulicy nie może mieć więcej niż {{ limit }} liter.
+empty_field: To pole nie może być puste!
+write_number: Wpisz poprawny numer. Pamiętaj, że numer musi być liczbą większą od 0.
+invalid_post: Błędny kod pocztowy. Poprawny format to 00-000.
+post_invalid_min: Kod pocztowy nie może mieć mniej niż {{ limit }} znaków.
+post_invalid_max: Zbyt długi kod. Długość nie może przekraczać {{ limit }} znaków.
+title_min {{limit}}: Nazwa musi mieć przynajmniej {{limit}} litery.
+title_max {{limit}}: Nazwa musi mieć najwyżej {{limit}} liter.

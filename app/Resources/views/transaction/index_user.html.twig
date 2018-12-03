@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'name.transactions'|trans }}
+{% endblock %}
+
+{% block content %}
+<div class="container w-75 p-3"><br/>
+    <div>
+        {% include 'default/_flash_messages.html.twig' %}
+    </div>
+    <h1>{{ 'name.transactions'|trans }}</h1>
+    {% if transactions is defined and transactions|length %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>{{ 'label.date.add'|trans }}</th>
+                    <th>{{ 'label.paymentmethod'|trans }}</th>
+                    <th>{{ 'label.collection'|trans }}</th>
+                    <th>{{ 'label.status'|trans }}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in transactions %}
+                <tr>
+                    <td>{{ item.date|date('d-m-Y') }}</td>
+                    <td>{{ item.paymentmethod.name }}</td>
+                    <td>{{ item.collection.name }}</td>
+                    <td>{{ item.status.name }}</td>
+                    <td><div class="btn-group">
+                        <a href="{{ path('transaction_view', {'transaction': item.id}) }}" class="btn btn-secondary" title="{{ 'action.view.transaction'|trans }}">
+                            {{ 'action.view.transaction'|trans }}
+                        </a>
+                    </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            {{ 'message.empty_list'|trans }}
+        </div>
+    {% endif %}
+    <div class="navigation text-center">
+        {{ pagerfanta(transactions, 'twitter_bootstrap3_translated', { routeName: ('my_transaction_paginated'), routeParams : {'user': app.user} }) }}
+    </div>
+</div>
+{% endblock %}

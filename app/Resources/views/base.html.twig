@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Sztukomat{% endblock %}</title>
+    {% block stylesheets %}
+        {% stylesheets '@bootstrap_css' '../app/Resources/public/css/*' %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
+		<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>		
+		<link rel="stylesheet" href="{{ asset('bundles/whiteoctoberpagerfanta/css/pagerfantaDefault.css') }}" type="text/css" media="all" />
+		<style type="text/css">
+			#text_all {
+				font-family: 'Roboto Slab', serif;
+				color: #ffffff;
+				background-color: #fca311;
+			}
+			.container {
+				font-family: 'Roboto Slab', serif;
+			}
+		</style>
+        {% endstylesheets %}
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+		<nav class="navbar navbar-light" id="text_all">
+			<a class="navbar-brand" href="{{ url('homepage_index') }}"><i class="fas fa-ticket-alt"></i> SZTUKOMAT</a>
+			<ul class="nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ url('spectacle_index') }}"><span class="sr-only"> Wybierz spektakl</span></a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{ url('spectacle_index') }}" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-list-alt"></i> Spektakle</a>
+					<div class="dropdown-menu">
+					<a class="nav-link" href="{{ url('spectacle_index') }}">Pokaż wszystkie </a>
+					<div class="dropdown-divider"></div>
+					<a class="nav-link disabled" href="#">Kryterium wyszukiwania:</a>
+					<div class="dropdown-divider"></div>
+					  <a class="nav-link" href="{{ url('play_index') }}"><i class="fas fa-play"></i> Sztuka </a>
+					  <a class="nav-link" href="{{ url('director_index') }}"><i class="fas fa-male"></i> Reżyser</a>
+					  <a class="nav-link" href="{{ url('location_index') }}"><i class="fas fa-location-arrow"> </i> Lokalizacja</a>
+					</div>
+				</li>
+				{% if is_granted('ROLE_ADMIN') %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url('user_index') }}"><i class="fas fa-users"></i> Użytkownicy</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url('transaction_index') }}"> Zamówienia</a>
+					</li>
+				{% endif %}
+            
+				{% if is_granted('IS_AUTHENTICATED_FULLY') == NULL%}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url('fos_user_security_login') }}"><i class="fas fa-sign-in-alt"></i> Zaloguj</a>
+					</li>
+
+
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url('fos_user_registration_register') }}"><i class="fas fa-user-plus"></i></i> Załóż konto</a>
+					</li>
+				{% endif %}
+			</ul>
+		</nav>
+		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+			<div id="text_all">
+				<ul class="nav justify-content-end navbar navbar-light" style="background-color: #d1d1d1;">
+					<li class="nav-item">
+						<a class="nav-link active" href="{{ url('fos_user_profile_edit') }}"><i class="fas fa-user-circle"></i>  Edytuj dane</a>
+				    </li>
+					<li class="nav-item">
+						<a class="nav-link active" href="{{ url('fos_user_change_password') }}">Zmień hasło</a>
+				    </li>
+				 	{% if app.user %}
+						<li class="nav-item">
+							<a href="{{ path('my_transaction', {'user': app.user}) }}" >Moje bilety</a>
+						</li>
+					{% endif %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url('fos_user_security_logout') }}"><i class="fas fa-sign-out-alt"></i> Wyloguj</a>
+					</li>
+				</ul>
+			</div>
+		{% endif %}
+		{% block content %}{% endblock %}
+	{% endblock %}
+	{% block javascripts %}
+		{% javascripts '@jquery' '@bootstrap_js' '../app/Resources/public/js/*' %}
+		<script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+	{% endblock %}
+</body>
+</html>

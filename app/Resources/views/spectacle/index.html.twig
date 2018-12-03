@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'name.spectacles'|trans }} 
+{% endblock %}
+
+{% block content %}
+<div class="container w-75 p-3"><br/>
+	<div>
+        {% include 'default/_flash_messages.html.twig' %}
+    </div>
+    <h1>{{ 'name.spectacles'|trans }} {% if is_granted('ROLE_ADMIN') %} <a href="{{ path('spectacle_add') }}" class="btn btn-primary" title="{{ 'action.add'|trans }}">
+            {{ 'action.add'|trans }}</a>{% endif %}</h1><br/>
+    {% if spectacles is defined and spectacles|length %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>{{ 'label.play'|trans }}</th>
+                    <th>{{ 'label.location'|trans }}</th>
+                    <th>{{ 'label.date'|trans }}</th>
+                    <th>{{ 'label.time'|trans }}</th>
+                    <th>{{ 'label.seats'|trans }}</th>
+                    <th>{{ 'label.price'|trans }}</th>
+                    <th></th>
+                    <th></th>
+                    <th scope="col">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>{{ 'label.actions'|trans }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in spectacles %}
+                <tr>
+                    <td>{{ item.play.title }}</td>
+                    <td>{{ item.location.name }}</td>
+					<td>{{ item.date|date('d-m-Y') }}</td>
+                    <td>{{ item.time|date('H:i') }}</td>
+                    <td>{{ item.seats }}</td>
+                    <td>{{ item.price }}</td>
+					{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+						{% if item.seats > 0 %}
+							<td>
+								<div class="btn-group">
+									<a href="{{ path('transaction_add', {'spectacle': item.id}) }}" class="btn btn-success" title="{{ 'action.buy'|trans }}">
+										<i class="fas fa-shopping-cart"></i> {{ 'action.buy'|trans }}
+									</a>
+								</div>
+							</td>
+						{% else %}
+							<td>
+							<div class="btn-group">
+								<a href="{{ path('transaction_add', {'spectacle': item.id}) }}" class="btn btn-secondary disabled" title="{{ 'action.buy.zero'|trans }}">
+									{{ 'action.buy.zero'|trans }}
+								</a>
+							</div>
+							</td>
+						{% endif %}
+					{% else %}
+						<td>
+                        <div class="btn-group">
+                            <a href="{{ path('transaction_add', {'spectacle': item.id}) }}" class="btn btn-secondary disabled" title="{{ 'action.buy.login'|trans }}">
+                                <i class="fas fa-shopping-cart"></i> {{ 'action.buy.login'|trans }}
+                            </a>
+                        </div>
+						</td>
+					{% endif %}
+					{% if is_granted('ROLE_ADMIN') %}
+                        <td>
+                            <div class="btn-group">
+                                <a href="{{ path('spectacle_edit', {'id': item.id}) }}" class="btn btn-info" title="{{ 'action.edit.spectacle'|trans }}">
+                                    {{ 'action.edit.spectacle'|trans }}
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="{{ path('spectacle_delete', {'id': item.id}) }}" class="btn btn-danger" title="{{ 'action.delete'|trans }}">
+                                    {{ 'action.delete'|trans }}
+                                </a>
+                            </div>
+                        </td>
+					{% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="navigation text-center">
+            {{ pagerfanta(spectacles, 'twitter_bootstrap3_translated', { routeName: ('spectacle_index_paginated') }) }}
+        </div>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            {{ 'message.empty_list_spectacle'|trans }}
+        </div>
+		<div class="btn-group">
+            <a href="{{ path('spectacle_index') }}" class="btn btn-dark" title="{{ 'label.spectacle'|trans }}">
+                {{ 'label.spectacle'|trans }}
+             </a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

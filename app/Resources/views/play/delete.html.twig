@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'play.delete'|trans }}
+{% endblock %}
+
+{% block content %}
+	<div class="container w-75 p-3"><br/>
+	{% if is_granted('ROLE_ADMIN') %}
+		<div class="alert alert-danger" role="alert">
+			  {{'question.confirmation.play'|trans}}
+		</div>
+		<div class="card">
+			{% if play is defined and play|length %}
+				<div class="card-body">
+					<h5 class="card-title">{{ play.title }}</h5>
+					<h6 class="card-subtitle mb-2 text-muted">{{ play.director.surname }}</h6>
+					{% include 'default/_form.html.twig' with {
+					page_title: '',
+					attr: {
+					method: 'post',
+					action: url('play_delete', {'id': play.id})
+					},
+					submit_label: 'Usuń',
+					back_to_list_path: 'play_index',
+					} %}
+				</div>
+			{% else %}
+				<p>
+					{{ 'message.empty_list'|trans }}
+				</p>
+			{% endif %}
+		</div>
+	{% else %}
+		<div class="alert alert-danger" role="alert">
+			{{ 'message.error.not.allow'|trans }}
+		</div>
+	{% endif %}
+	</div>
+{% endblock %}

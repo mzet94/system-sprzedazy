@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{ 'title.play_add'|trans }}
+{% endblock %}
+
+{% block content %}
+	<div class="container w-75 p-3"><br/>
+	{% if is_granted('ROLE_ADMIN') %}
+		 <div>
+			{% include 'default/_flash_messages.html.twig' %}
+		</div>
+		<div class="card">
+		<div class="card-header"><h2>Dodaj sztukę</h2></div>
+			<div class="card-body">
+				{% include 'default/_form.html.twig' with {
+				page_title: '',
+				attr: {
+				method: 'post',
+				action: url('play_add')
+				},
+				back_to_list_path: 'play_index',
+				} %}
+			</div>
+		</div>
+	{% else %}
+		<div class="alert alert-danger" role="alert">
+			{{ 'message.error.not.allow'|trans }}
+		</div>
+	{% endif %}
+	</div>
+{% endblock %}

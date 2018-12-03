@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/framework/css/structure.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/framework/css/body.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/framework/css/exception.css') }}" />
+{% endblock %}
+
+{% block body %}
+
+{% block content %}
+<div class="container all"><br/>
+    
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+		<h1 class="display-5">SZTUKOMAT</h1>
+		<p class="lead">System sprzedaży biletów teatralnych<br/></p>
+		<hr class="my-4">
+		 <p>Projekt przygotowany w ramach przemiotu Zaawansowane Techniki Programowania 2 na kierunku Elektroniczne Przetwarzanie Informacji.</p>
+		<p> Autor: Marta Zięba</p>
+		<p> Aby w pełni korzystać z możliwości systemu <a class="btn btn-outline-success" href="{{ url('fos_user_security_login') }}" role="button">zaloguj się</a></p>
+	  </div>
+	</div>
+{% endblock %}
+{% endblock %}

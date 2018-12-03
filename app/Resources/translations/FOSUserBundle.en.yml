@@ -1,0 +1,57 @@
+group:
+    edit:
+        submit: 'Zmień grupę'
+    show:
+        name: 'Nazwa grupy'
+    new:
+        submit: 'Utwórz grupę'
+    flash:
+        updated: 'Zmiany dla grupy zostały zapisane.'
+        created: 'Grupa zostałą utworzona.'
+        deleted: 'Usunięto grupę.'
+
+security:
+    login:
+        username: Login
+        password: Hasło
+        remember_me: 'Zapamiętaj mnie'
+        submit: 'Zaloguj się'
+
+profile:
+    show:
+        username: Login
+        email: E-mail
+    edit:
+        submit: Wprowadź
+    flash:
+        updated: 'Zmiany zostały zapisane.'
+
+change_password:
+    submit: 'Zmień hasło'
+    flash:
+        success: 'Hasło zostało zmienione.'
+
+registration:
+    confirmed: 'Gratulacje %username%, Twoje konto jest aktywne.'
+    back: 'Powrót'
+    submit: Potwierdź
+    flash:
+        user_created: 'Użytkownik został dodany.'
+    login: Zaloguj
+
+# Global strings
+layout:
+    logout: Wyloguj
+    login: Zaloguj
+    register: Zarejestruj
+    logged_in_as: 'Zalogowany jako %username%'
+
+form:
+    group_name: Nazwa
+    username: Login
+    email: 'Adres e-mail'
+    current_password: 'Potwierdź hasłem'
+    password: Hasło
+    password_confirmation: 'Powtórz hasło'
+    new_password: 'Nowe hasło'
+    new_password_confirmation: 'Powtórz nowe hasło'

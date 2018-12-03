@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'transaction.view'|trans }}
+{% endblock %}
+
+{% block content %}
+<div class="container w-75 p-3"><br/>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <h1>{{ 'title.transaction.view'|trans }}</h1>
+        <div>
+            {% include 'default/_flash_messages.html.twig' %}
+        </div>
+        {% if transaction is defined and transaction|length %}
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ 'label.date.add'|trans }}</th>
+                    <th>{{ 'label.paymentmethod'|trans }}</th>
+                    <th>{{ 'label.collection'|trans }}</th>
+                    <th>{{ 'label.title'|trans }}</th>
+                    <th>{{ 'label.tickets'|trans }}</th>
+                    <th>{{ 'label.date.spectacle'|trans }}</th>
+                    <th>{{ 'label.status'|trans }}</th>
+                    <th>{{ 'label.money'|trans }}</th>
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                        <th scope="col">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>{{ 'label.actions'|trans }}
+                        </th>
+                    {% endif %}
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ transaction.date|date('d-m-Y') }}</td>
+                    <td>{{ transaction.paymentmethod.name }}</td>
+                        <td>{{ transaction.collection.name }}</td>
+                        <td>{{ spectacle.play.title }} </td>
+                        <td> {{transaction.numberOfTickets}}</td>
+                        <td>{{ spectacle.date|date('d-m-Y') }} </td>
+                        <td>{{ transaction.status.name }}</td>
+                        <td><b>{{ money }} zł</b></td>
+                </tr>
+                </tbody>
+            </table>
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="btn-group">
+                    <a href="{{ path('transaction_index')}}" class="btn btn-default" title="{{ 'action.index.transaction'|trans }}">
+                        {{ 'action.index.transaction'|trans }}
+                    </a>
+                </div>
+                {%  else %}
+                    <div class="btn-group">
+                        <a href="{{ path('my_transaction', {'user': app.user})}}" class="btn btn-default" title="{{ 'action.index.transaction'|trans }}">
+                            {{ 'action.index.transaction'|trans }}
+                        </a>
+                    </div>
+                {%  endif %}
+        {% else %}
+            <div class="alert alert-warning" role="alert">
+                {{ 'message.empty_list'|trans }}
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="alert alert-danger" role="alert">
+            {{ 'message.error.not.allow'|trans }}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+

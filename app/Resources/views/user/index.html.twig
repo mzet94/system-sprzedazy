@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.users'|trans }}
+{% endblock %}
+
+{% block content %}
+<div class="container w-75 p-3"><br/>
+    <div>
+        {% include 'default/_flash_messages.html.twig' %}
+    </div>
+    {% if is_granted('ROLE_ADMIN') %}
+    <h1>{{ 'title.admins'|trans }}</h1>
+        {% if users is defined and users|length %}
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>{{ 'label.username'|trans }}</th>
+                    <th>{{ 'label.email'|trans }}</th>
+                    <th>{{ 'label.last.login'|trans }}</th>
+                    <th scope="col">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{ 'label.actions'|trans }}
+                    </th>
+                    <th scope="col">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{ 'label.actions'|trans }}
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in users %}
+                    <tr>
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.lastLogin|date('d-m-Y') }}</td>
+                        {% if item.hasRole('ROlE_ADMIN') %}
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ path('add_user', {'id': item.id}) }}" class="btn btn-default" title="{{ 'action.change'|trans }}">
+                                        {{ 'action.change'|trans }}
+                                    </a>
+                                </div>
+                            </td>
+                        {% else %}
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ path('add_admin', {'id': item.id}) }}" class="btn btn-default" title="{{ 'action.change.admin'|trans }}">
+                                        {{ 'action.change.admin'|trans }}
+                                    </a>
+                                </div>
+                            </td>
+                        {% endif %}
+                        {% if item.hasRole('ROLE_ADMIN') %}
+                            <td></td>
+                            <td></td>
+                        {% else %}
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ path('user_delete', {'username': item.username}) }}" class="btn btn-danger" title="{{ 'action.delete'|trans }}">
+                                        {{ 'action.delete'|trans }}
+                                    </a>
+                                </div>
+                            </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="alert alert-warning" role="alert">
+                {{ 'message.empty_list'|trans }}
+            </div>
+        {% endif %}
+	{% else %}
+		<p> {{ 'message.error.not.allow'|trans }} </p>
+	{% endif %}
+</div>
+{% endblock %}

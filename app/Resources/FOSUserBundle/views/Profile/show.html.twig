@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<div class="container  w-75 p-3"><br/>
+	<div>
+        {% include 'default/_flash_messages.html.twig' %}
+	</div>
+	{% if is_granted('ROLE_ADMIN') %}
+		{{ 'hello.action'|trans }} <b>{{user.username}} </b> :)) <br/>
+	{% else %}
+	<div class="fos_user_user_show">
+		{{ 'hello.action'|trans }} <b>{{user.username}} </b> :)) <br/>
+		<br/>
+		{{ 'hello.action.user1'|trans }} <a href="{{ url('spectacle_index') }}"><b>{{ 'spectacle.spectacle'|trans }}</b></a>.<br/>
+		{{ 'hello.action.user2'|trans }} <a href="{{ path('my_transaction', {'user': app.user}) }}" ><b>{{ 'tickets.tickets'|trans }}</b></a>.<br/>
+		{{ 'hello.action.user3'|trans }}<br/><br/>
+		<i>{{ 'hello.admin'|trans }}</i>
+
+	</div>
+	</div>
+	{% endif %}
+{% endblock %}

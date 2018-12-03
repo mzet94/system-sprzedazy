@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.transaction.delete'|trans }}
+{% endblock %}
+
+{% block content %}
+	<div class="container w-75 p-3"><br/>
+		{% if is_granted('ROLE_ADMIN') %}
+			<div class="alert alert-danger" role="alert">
+			  {{'question.confirmation.transaction'|trans}}
+			</div>
+			{% if transaction is defined and transaction|length %}
+				<div class="card" style="width: 18rem;">
+					<div class="card-body">
+						<h5 class="card-title"></h5>
+						<h6 class="card-subtitle mb-2 text-muted">Zamawiający: {{ transaction.user.username }}</h6>
+						<p class="card-text">Złożone: {{ transaction.date|date('Y-m-d') }}</p>
+					</div>
+				</div>
+			{% else %}
+				<p>
+					{{ 'message.empty_list'|trans }}
+				</p>
+			{% endif %}
+
+			{% include 'default/_form.html.twig' with {
+			page_title: '',
+			attr: {
+			method: 'post',
+			action: url('transaction_delete', {'id': transaction.id})
+			},
+			back_to_list_path: 'transaction_index',
+			submit_label: 'Usuń'
+			} %}
+		{% else %}
+			<div class="alert alert-danger" role="alert">
+				{{ 'message.error.not.allow'|trans }}
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

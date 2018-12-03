@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.user.delete'|trans }}
+{% endblock %}
+
+{% block content %}
+	<div class="container w-75 p-3"><br/>
+		{% if is_granted('ROLE_ADMIN') %}
+			{% if user.hasRole('ROLE_ADMIN') %}
+				<div class="alert alert-danger" role="alert">
+					Nie można usunąć administratora!
+				</div>
+			{% else %}
+				<div class="alert alert-danger" role="alert">
+				{{'question.confirmation.user'|trans}}
+				</div>
+				<div class="card">
+					{% if user is defined and user|length %}
+						<div class="card-body">
+							<h5 class="card-title">Login: {{ user.username|trans }}</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Ostatnie logowanie: {{ user.lastLogin|date('d-m-Y') }}</h6>
+							{% include 'default/_form.html.twig' with {
+							page_title: '',
+							attr: {
+							method: 'post',
+							action: url('user_delete', {'username': user.username})
+							},
+							back_to_list_path: 'user_index',
+							submit_label: 'Usuń'
+							} %}
+						</div>
+					{% else %}
+						<p>
+							{{ 'message.empty_list'|trans }}
+						</p>
+					{% endif %}
+				</div>
+			{% endif %}
+		{% else %}
+			<div class="alert alert-danger" role="alert">
+				{{ 'message.error.not.allow'|trans }}
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

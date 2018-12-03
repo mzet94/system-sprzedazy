@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.location.delete'|trans }}
+{% endblock %}
+
+{% block content %}
+	<div class="container w-75 p-3"><br/>
+	{% if is_granted('ROLE_ADMIN') %}
+		<div class="alert alert-danger" role="alert">
+			  {{'question.confirmation.location'|trans}}
+		</div>
+		<div class="card">
+			{% if location is defined and location|length %}
+				<div class="card-body">
+					<h5 class="card-title">{{ location.name }}</h5>
+					<h6 class="card-subtitle mb-2 text-muted">{{ location.city }}</h6>
+					<p class="card-text">{{ location.street}} {{ location.number}}</p>
+					{% include 'default/_form.html.twig' with {
+					page_title: '',
+					attr: {
+					method: 'post',
+					action: url('location_delete', {'id': location.id})
+					},
+					back_to_list_path: 'location_index',
+					submit_label: 'Usuń'
+					} %}
+				</div>
+			{% else %}
+				<p>
+					{{ 'message.empty_list'|trans }}
+				</p>
+			{% endif %}
+		</div>
+	{% else %}
+		<div class="alert alert-danger" role="alert">
+			{{ 'message.error.not.allow'|trans }}
+		</div>
+	{% endif %}
+	</div>
+{% endblock %}
